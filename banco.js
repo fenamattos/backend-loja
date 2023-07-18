@@ -1,5 +1,6 @@
 const pg = require("pg")
-const banco = new pg.Client("")
+require('dotenv').config()
+const banco = new pg.Client(process.env.DATABASE)
 
 banco.connect((erro) => {
     if (erro) {
